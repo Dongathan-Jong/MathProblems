@@ -180,4 +180,46 @@ case 4:
 
 void answerCheck()
 {
+    case 1:
+        if(answer == firstNumber + secondNumber)
+        {
+          score++;
+          if(testMode == 1)
+          {
+            std::cout << "Correct!\n";
+          }
+        }
+        else
+        {
+          if(testMode == 1)
+          {
+            std::cout << "Try again!\n";
+
+            std::cin >> answer;
+
+            answerCheck();
+          }
+        }
+        break;
+      case 2:
+        if(answer == firstNumber - secondNumber)
+        {
+          score++;
+          if(testMode == 1)
+            {
+              std::cout << "Correct!\n";
+            }
+        }
+        else
+        {
+          if(testMode == 1)
+          {
+            std::cout << "Try again!\n";
+
+            std::cin >> answer;
+            answerCheck();
+          }
+        }
+      
+      break;
 }
