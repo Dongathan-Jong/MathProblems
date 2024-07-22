@@ -24,10 +24,10 @@ int main() {
   while(isPlaying == 1)
       while(validGrade == false)
         {
-          std::cout << "Please select a grade level, 1 - 5\n";
+          std::cout << "Please select a grade level, 1 - 8\n";
           std::cin >> grade;
     
-          std::cout << "How many questions would you like to answer?\n";
+          std::cout << "How many questions would you like to answer? Please state  below\n";
           std::cin >> numQuestions;
     
           std::cout << "Enter 1 for practice Mode, enter 2 for Test Mode\n";
@@ -43,7 +43,7 @@ int main() {
           }
         }
 
-  operatorGeneration();
+  
       questionGeneration();
 
       for(int i = 0; i < numQuestions; i++)
@@ -52,21 +52,25 @@ int main() {
           {
             std::cout << firstNumber << " + " << secondNumber << " = ";
             std::cin >> answer;
+            operatorGeneration();
           }
           else if(operatorChoice == 2)
           {
             std::cout << firstNumber << " - " << secondNumber << " = ";
             std::cin >> answer;
+            operatorGeneration();
           }
           else if(operatorChoice == 3)
           {
             std::cout << firstNumber << " x " << secondNumber << " = ";
             std::cin >> answer;
+            operatorGeneration();
           }
           else if(operatorChoice == 4)
           {
             std::cout << firstNumber << " / " << secondNumber << " = ";
             std::cin >> answer;
+            operatorGeneration();
           }
           answerCheck();
 
@@ -116,6 +120,10 @@ void questionGeneration()
           firstNumber =  1 + (rand() % 75);
           secondNumber = 1 + (rand() % 7);
         }
+           case 2:
+        firstNumber = rand() % 50 + 25;
+        secondNumber = rand() % firstNumber + 1;
+        break;
         else if(operatorChoice == 4)
         {
           operatorChoice = 3;
@@ -150,6 +158,10 @@ case 4:
         else if (operatorChoice == 3)
           {
             firstNumber =  1 + (rand() % 20);
+             firstNumber = 1000 + (rand() % 2000);
+            secondNumber = 1 + (rand() % secondNumber);
+             firstNumber = 1000 + (rand() % 2000);
+            secondNumber = 1 + (rand() % secondNumber);
             secondNumber = 1 + (rand() % 20);
           }
         else
@@ -263,5 +275,27 @@ void answerCheck()
           }
         }
         break;
+   case 5:
+        if(answer == firstNumber - secondNumber)
+        {
+          score++;
+          if(testMode == 1)
+            {
+              std::cout << "Correct!\n";
+            }
+        }
+        else
+        {
+          if(testMode == 1)
+          {
+            std::cout << "Try again!\n";
+
+            std::cin >> answer;
+            answerCheck();
+          }
+        }
+      
+      break;
+
     }
 }
