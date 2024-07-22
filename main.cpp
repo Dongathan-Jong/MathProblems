@@ -123,3 +123,40 @@ void questionGeneration()
           secondNumber = 1 + (rand() % 7);
         }
         break;
+
+case 4:
+        if(operatorChoice == 1 || operatorChoice == 2)
+        {
+          firstNumber = 250 + (rand() % 500);
+          secondNumber = 1 + (rand() % firstNumber);
+        }        else if (operatorChoice == 3)
+        {
+          firstNumber =  1 + (rand() % 10);
+          secondNumber = 1 + (rand() % 10);
+        }
+        else
+        {
+          divisibleBy = 1 + (rand() % 7);
+          firstNumber = (1 + (rand() % 10)) * divisibleBy;
+          secondNumber = divisibleBy;
+        }
+        break;
+      case 5:
+        if(operatorChoice == 1 || operatorChoice == 2)
+          {
+            firstNumber = 1000 + (rand() % 2000);
+            secondNumber = 1 + (rand() % secondNumber);
+          }
+        else if (operatorChoice == 3)
+          {
+            firstNumber =  1 + (rand() % 20);
+            secondNumber = 1 + (rand() % 20);
+          }
+        else
+          {
+            divisibleBy = 5 + (rand() % 15);
+            firstNumber = (5 + (rand() % 15)) * divisibleBy * 2;
+            secondNumber = divisibleBy * 2;
+          }
+    }
+}
