@@ -159,4 +159,25 @@ case 4:
             secondNumber = divisibleBy * 2;
           }
     }
+}void operatorGeneration()
+{
+  operatorChoice = 1 + (rand() % 4);
+
+  if(grade < 3 && operatorChoice == 3)
+    {
+      operatorChoice = 1;
+    }
+  else if(grade < 3 && operatorChoice == 4)
+    {
+      operatorChoice = 2;
+    }
+  else if(grade == 3 && operatorChoice == 4)
+    {
+      operatorChoice = 3;
+    }
+}
+
+
+void answerCheck()
+{
 }
