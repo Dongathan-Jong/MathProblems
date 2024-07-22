@@ -108,18 +108,18 @@ void questionGeneration()
       case 3:
         if(operatorChoice == 1 || operatorChoice == 2)
         {
-          firstNumber = 250 + (rand() % 500);
+          firstNumber = 250 + (rand() % 5020);
           secondNumber = 1 + (rand() % firstNumber);
         }
         else if(operatorChoice == 3)
         {
-          firstNumber =  1 + (rand() % 7);
+          firstNumber =  1 + (rand() % 75);
           secondNumber = 1 + (rand() % 7);
         }
         else if(operatorChoice == 4)
         {
           operatorChoice = 3;
-          firstNumber =  1 + (rand() % 7);
+          firstNumber =  1 + (rand() % 17);
           secondNumber = 1 + (rand() % 7);
         }
         break;
@@ -127,11 +127,11 @@ void questionGeneration()
 case 4:
         if(operatorChoice == 1 || operatorChoice == 2)
         {
-          firstNumber = 250 + (rand() % 500);
+          firstNumber = 250 + (rand() % 5040);
           secondNumber = 1 + (rand() % firstNumber);
         }        else if (operatorChoice == 3)
         {
-          firstNumber =  1 + (rand() % 10);
+          firstNumber =  1 + (rand() % 120);
           secondNumber = 1 + (rand() % 10);
         }
         else
@@ -154,8 +154,8 @@ case 4:
           }
         else
           {
-            divisibleBy = 5 + (rand() % 15);
-            firstNumber = (5 + (rand() % 15)) * divisibleBy * 2;
+            divisibleBy = 5 + (rand() % 151);
+            firstNumber = (5 + (rand() % 112)) * divisibleBy * 2;
             secondNumber = divisibleBy * 2;
           }
     }
@@ -184,9 +184,9 @@ void answerCheck()
         if(answer == firstNumber + secondNumber)
         {
           score++;
-          if(testMode == 1)
+          if(testMode  1)
           {
-            std::cout << "Correct!\n";
+            std::cout << "Correct! Good Jo\n";
           }
         }
         else
@@ -195,7 +195,7 @@ void answerCheck()
           {
             std::cout << "Try again!\n";
 
-            std::cin >> answer;
+            std::cin >> answers;
 
             answerCheck();
           }
@@ -222,4 +222,46 @@ void answerCheck()
         }
       
       break;
+
+  case 3:
+        if (answer == firstNumber * secondNumber)
+        {
+          score++;
+          if(testMode == 1)
+            {
+              std::cout << "Correct!\n";
+            }
+        }
+        else
+        {
+          if(testMode == 1)
+          {
+            std::cout << "Try again!\n";
+
+            std::cin >> answer;
+            answerCheck();
+          }  
+        }
+        break;
+      case 4:
+        if(answer == firstNumber / secondNumber)
+        {
+          score++;
+          if(testMode == 1)
+            {
+              std::cout << "Correct!\n";
+            }
+        }
+        else
+        {
+          if(testMode == 1)
+          {
+            std::cout << "Try again!\n";
+
+            std::cin >> answer;
+            answerCheck();
+          }
+        }
+        break;
+    }
 }
