@@ -42,4 +42,36 @@ int main() {
             validGrade = true;
           }
         }
+
+  operatorGeneration();
+      questionGeneration();
+
+      for(int i = 0; i < numQuestions; i++)
+        {
+          if(operatorChoice == 1)
+          {
+            std::cout << firstNumber << " + " << secondNumber << " = ";
+            std::cin >> answer;
+          }
+          else if(operatorChoice == 2)
+          {
+            std::cout << firstNumber << " - " << secondNumber << " = ";
+            std::cin >> answer;
+          }
+          else if(operatorChoice == 3)
+          {
+            std::cout << firstNumber << " x " << secondNumber << " = ";
+            std::cin >> answer;
+          }
+          else if(operatorChoice == 4)
+          {
+            std::cout << firstNumber << " / " << secondNumber << " = ";
+            std::cin >> answer;
+          }
+          answerCheck();
+
+          operatorGeneration();
+          questionGeneration();
+          
+        }
 }
