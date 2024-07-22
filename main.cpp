@@ -74,4 +74,52 @@ int main() {
           questionGeneration();
           
         }
+
+  if(testMode == 2)
+      {
+        std::cout << "Your Score Is: " << score << " out of " << numQuestions << "\n";
+      }    
+
+      score = 0;
+
+      std::cout << "Would you like to keep playing? (1 for yes, 2 for no)\n";
+      std::cin >> isPlaying; 
+
+      if(isPlaying == 1)
+      {
+        validGrade = false;
+      }
+    }
 }
+
+
+void questionGeneration()
+{
+  switch(grade)
+    {
+      case 1:
+        firstNumber = rand() % 25 + 12;
+        secondNumber = rand() % firstNumber + 1;
+        break;
+      case 2:
+        firstNumber = rand() % 50 + 25;
+        secondNumber = rand() % firstNumber + 1;
+        break;
+      case 3:
+        if(operatorChoice == 1 || operatorChoice == 2)
+        {
+          firstNumber = 250 + (rand() % 500);
+          secondNumber = 1 + (rand() % firstNumber);
+        }
+        else if(operatorChoice == 3)
+        {
+          firstNumber =  1 + (rand() % 7);
+          secondNumber = 1 + (rand() % 7);
+        }
+        else if(operatorChoice == 4)
+        {
+          operatorChoice = 3;
+          firstNumber =  1 + (rand() % 7);
+          secondNumber = 1 + (rand() % 7);
+        }
+        break;
